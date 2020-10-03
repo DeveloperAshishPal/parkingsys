@@ -25,7 +25,7 @@ exports.park = (req, res) => {
   Sale.create(sale)
     .then(data => {
         return Slot.update({is_available:false}, {
-            where: { id: id }
+            where: { id: req.body.slot_no }
         }).then(()=>{
             res.send(data);
         })
@@ -45,7 +45,7 @@ exports.unpark = (req, res) => {
   // find the sale 
   // calculate the amount from time * price
   // update slot for availability
-  Sale.find({ where: { slot_no: id } }).then(data=>{
+  Sale.findAll({ where: { slot_no: id } }).then(data=>{
     let startTime = moment(data[0].created_at);
     var duration = moment.duration(moment().diff(startTime));
     var hours = duration.asHours();
