@@ -1,13 +1,14 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-require("./routes")('/api/v1',app);
 // parsing content-type - application/json
 app.use(bodyParser.json());
 
 // parsing content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
+require("./routes")('/api/v1',app);
 const db = require("./model");
 
 let syncOptions = { force: false };

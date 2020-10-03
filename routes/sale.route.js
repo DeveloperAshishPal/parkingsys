@@ -1,4 +1,4 @@
-const sale = require("../controllers/sale.controller.js");
+const sale = require("../controller/sale.controller.js");
 module.exports = (router) => {
     
     // Create a new sale
@@ -6,6 +6,6 @@ module.exports = (router) => {
   
     // Update a sale with id and make slot available
     router.put("/:id", sale.unpark);
-    
+
     return router;
   };

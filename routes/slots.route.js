@@ -1,4 +1,4 @@
-const slots = require("../controllers/slots.controller.js");
+const slots = require("../controller/slots.controller.js");
 
 module.exports = (router) => {  
     // Create a new slot

@@ -1,4 +1,4 @@
-const db = require("../models");
+const db = require("../model");
 const Slots = db.slots;
 
 // Create and Save a new Slots
